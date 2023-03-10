@@ -25,7 +25,7 @@ const DataBox = () => {
     }, [])
 
     return (
-        <Card>
+        <Card className="mx-2 my-2">
             <Card.Body>
                 <div>Saldo da conta {balance} </div>
                 <div>Endereço {address}</div>

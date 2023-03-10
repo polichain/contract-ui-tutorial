@@ -28,7 +28,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" >
       <Row className="justify-content-md-center">
         <NavbarCustom handleOnClickConnect={handleOnClickConnect} isConnected={isConected} />
       </Row>

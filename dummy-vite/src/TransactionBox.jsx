@@ -26,7 +26,7 @@ const TransactionBox = () => {
     }
 
     return (
-        <Card className="justify-content-center">
+        <Card className="justify-content-center mx-2 my-2" >
             <Card.Body >
                 <Form onSubmit={handleOnSubmitForm}>
                     <Form.Group className="mb-3">

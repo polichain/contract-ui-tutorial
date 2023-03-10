@@ -7,10 +7,10 @@ const NavbarCustom = ({ isConnected, handleOnClickConnect }) => {
     return (
         <Navbar bg="dark" variant="dark" >
             <Container>
-            <Navbar.Brand>PoliETH</Navbar.Brand>
+            <Navbar.Brand className="mx-2 my-2">PoliETH</Navbar.Brand>
                 {
                     isConnected ?
-                        <Navbar.Text>Você está conectado!</Navbar.Text>
+                        <Navbar.Text className="mx-2 my-2">Você está conectado!</Navbar.Text>
                     :
                         <Button onClick={handleOnClickConnect}>
                             Conectar
