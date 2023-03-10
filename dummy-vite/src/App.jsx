@@ -1,6 +1,13 @@
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import IsConnected from "./IsConnected";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [provider, setProvider] = useState()
@@ -70,19 +77,27 @@ function App() {
       <div>Endereço {address}</div>
       <div>Numero do Bloco {block_number}</div>
       <br/>
-      <form onSubmit={handleOnSubmitForm}>
-        <div>
-          <label>Wallet number:
-            <input type="text" onChange={e => {setWallet(e.target.value)}} name="name" />
-          </label>
-        </div>
-        <div>
-          <label>Ammount in ether:
-            <input type="number" step="any"  onChange={e => {setAmmount(e.target.value)}} name="name" />
-          </label>
-        </div>
-        <input type="submit" value="Enviar" />
-      </form>
+      <Row className="justify-content-md-center">
+        <Col md="auto">
+          <Card className="justify-content-center">
+          <Card.Body>
+            <Form onSubmit={handleOnSubmitForm}>
+              <Card.Text>
+                <Form.Group>
+                  <Form.Label>Wallet number:</Form.Label>
+                  <Form.Control type="text" onChange={e => {setWallet(e.target.value)}} name="name" />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Ammount in ether:</Form.Label>
+                  <Form.Control type="number" step="any"  onChange={e => {setAmmount(e.target.value)}} name="name" />
+                </Form.Group>
+              </Card.Text>
+              <Button value="Enviar" variant="primary" type="submit" >Send</Button>
+            </Form>
+          </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </div>
   )
 }
