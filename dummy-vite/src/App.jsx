@@ -1,11 +1,11 @@
-import { ethers } from "ethers";
+import { ethers, hexlify } from "ethers";
 import { useEffect, useState } from "react";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TransactionBox from "./TransactionBox";
 import DataBox from "./DataBox";
-import Navbar from "./Navbar";
+import NavbarCustom from "./NavbarCustom";
 
 function App() {
   const [isConected, setIsConected] = useState()
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Row className="justify-content-md-center">
-        <Navbar handleOnClickConnect={handleOnClickConnect} isConnected={isConected} />
+        <NavbarCustom handleOnClickConnect={handleOnClickConnect} isConnected={isConected} />
       </Row>
       { isConected &&
         <Row className="justify-content-md-center my-5">
